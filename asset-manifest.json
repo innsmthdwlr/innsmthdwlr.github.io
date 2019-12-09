@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/static/css/main.391add3c.chunk.css",
+    "main.css": "/static/css/main.cd536359.chunk.css",
     "main.js": "/static/js/main.56c77afc.chunk.js",
     "main.js.map": "/static/js/main.56c77afc.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.84f61fc6.js",
@@ -8,9 +8,9 @@
     "static/js/2.e0032e3f.chunk.js": "/static/js/2.e0032e3f.chunk.js",
     "static/js/2.e0032e3f.chunk.js.map": "/static/js/2.e0032e3f.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.cf5c888aab425db5d0f5c973dd79cc80.js": "/precache-manifest.cf5c888aab425db5d0f5c973dd79cc80.js",
+    "precache-manifest.8f8feb6d5c392ae6203ff8355481e039.js": "/precache-manifest.8f8feb6d5c392ae6203ff8355481e039.js",
     "service-worker.js": "/service-worker.js",
-    "static/css/main.391add3c.chunk.css.map": "/static/css/main.391add3c.chunk.css.map",
+    "static/css/main.cd536359.chunk.css.map": "/static/css/main.cd536359.chunk.css.map",
     "static/js/2.e0032e3f.chunk.js.LICENSE": "/static/js/2.e0032e3f.chunk.js.LICENSE",
     "static/media/index.css": "/static/media/AvenirNextLTPro-Regular.cdb0db7c.woff",
     "static/media/hypnotoad.gif": "/static/media/hypnotoad.cc947b4c.gif"
@@ -18,7 +18,7 @@
   "entrypoints": [
     "static/js/runtime-main.84f61fc6.js",
     "static/js/2.e0032e3f.chunk.js",
-    "static/css/main.391add3c.chunk.css",
+    "static/css/main.cd536359.chunk.css",
     "static/js/main.56c77afc.chunk.js"
   ]
 }
