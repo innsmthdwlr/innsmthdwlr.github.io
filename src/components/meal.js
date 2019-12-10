@@ -1,7 +1,7 @@
 import React from 'react';
 import './meal.css'
 
-const toDate = (dStr,format) => {
+const toDate = (dStr,format="h:m") => {
   var now = new Date();
 	if (format === "h:m") {
  		now.setHours(dStr.substr(0,dStr.indexOf(":")));
@@ -60,6 +60,9 @@ const getMealTag = (mealTime, measurements, noTag) => {
 }
 
 const Meal = ({ meal }) => {
+  // let a = toDate("16:10");
+  // let b = toDate("14:40");
+  // console.log((a.getTime() - b.getTime())/ (1000 * 3600));
   return (
     <div className="mealCard">
      <p>Meal started at: {meal.time} <span className='measurement-tag'>{getMealTag(meal.time, meal.measurements, meal.noTag)}</span></p>

@@ -110,6 +110,43 @@
                 "value": 129
               }
             ]
+          },
+          {
+            "time": "11:15",
+            "image": "IMG_20191210_111559.png",
+            "description": "Half of graham roll with homemade ham, yoghurt, dill, lettuce and bell pepper",
+            "noTag": 0,
+            "measurements": []
+          },
+          {
+            "time": "13:04",
+            "image": "IMG_20191210_130436.png",
+            "description": "Orange, walnuts, cream with homemade tahini paste",
+            "noTag": 0,
+            "measurements": []
+          },
+          {
+            "time": "14:40",
+            "image": "IMG_20191210_144032.png",
+            "description": "Half of graham roll with gouda cheese slice, lettuce and wiener",
+            "noTag": 0,
+            "measurements": []
+          },
+          {
+            "time": "16:10",
+            "image": "IMG_20191210_161040.png",
+            "description": "Whole-grain spaghetti with spinach and salmon",
+            "noTag": 0,
+            "measurements": [
+              {
+                "time": "17:10",
+                "value": 84
+              },
+              {
+                "time": "17:11",
+                "value": 88
+              }
+            ]
           }
         ]
       }
