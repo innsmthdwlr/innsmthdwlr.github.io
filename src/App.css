@@ -15,13 +15,19 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  min-height: 98vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+}
+
+
+.App-hidden{
+  background-color: #282c34;
+  min-height: 2vh;
 }
 
 .App-link {
@@ -43,4 +49,33 @@
   position: relative;
   overflow: hidden;
   border-radius: 50%;
+}
+
+h1 {
+  color: gray;
+  margin: 1em;
+  font-weight: normal;
+}
+
+a{
+  color: #302e36;
+  text-decoration: none;
+}
+
+a:hover{
+  color: #282c34;
+  text-decoration: none;
+}
+
+.datepicker{
+  margin: 1em;
+  display: block;
+  color: silver;
+}
+
+input{
+  background-color: silver;
+  border-style: solid;
+  border-color: gray;
+  border-width: 3px;
 }

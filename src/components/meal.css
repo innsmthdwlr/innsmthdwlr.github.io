@@ -1,0 +1,41 @@
+.mealCard{
+    background-color: white;
+    border: 1px black dashed;
+    padding: 1em;
+    margin: 1em;
+}
+
+.dayCard{
+    background-color: silver;
+    padding: 1em;
+    margin: 0;
+    border-width: 1px 0px 0px 0px;
+    border-color: black;
+    border-style: dashed;
+}
+
+.mealImg{
+    border: 1px black solid;
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+}
+
+ul{
+    list-style-type: none;
+}
+
+.measurement-ok{
+    font-weight: normal;
+    color: green;
+}
+
+.measurement-high{
+    font-weight: bold;
+    color: red;
+}
+
+.measurement-tag{
+    font-weight: bold;
+}
