@@ -2,7 +2,6 @@ import React, {useState} from 'react';
 import { HashRouter, Route, Link } from "react-router-dom";
 import logo from './assets/hypnotoad.gif';
 import './App.css';
-import jsonData from './assets/registry.json';
 import Day from './components/day';
 
 interface Day
@@ -20,25 +19,42 @@ interface Day
   }[]; 
 }
 
-
-const DiabetesPage = () => {
+const DiabetesPage: React.FC = () => {
+  
   const todayDate = new Date();
   const todayFormatted = todayDate.getFullYear() + '-' + (todayDate.getMonth()+1) + '-' + todayDate.getDate();
   
   const [searchTerm, setSearchTerm] = useState(todayFormatted);
   const [searchResults, setSearchResults] = React.useState<Array<Day>>([]);
+  const [jsonData, setJsonData] = useState({});
+  const [loadingRepo, setloadingRepo] = useState(true);
+  const [searchResultChanged, setSearchResultChanged] = useState(true);
 
   const handleChange = (event: any) => 
   {
     setSearchTerm(event.target.value);
+    setSearchResultChanged(true);
   }
+  const url = 'https://dl.dropboxusercontent.com/s/ct056h9skhev9ro/registry.json';
 
   React.useEffect(() => {
-    const results = jsonData.days.filter( function (day:Day) {
-      return day.date === searchTerm;
-    });
-    setSearchResults(results);
-  }, [searchTerm]);
+    if(loadingRepo){
+    fetch(url)
+      .then(response => response.json())
+      .then(data => {
+        setJsonData(data);
+        setloadingRepo(false);
+      });
+    };
+
+    if(!loadingRepo && searchResultChanged){
+      const results = (jsonData as any).days.filter( function (day:Day) {
+        return day.date === searchTerm;
+      });
+      setSearchResults(results);
+      setSearchResultChanged(false);
+    }
+  }, [loadingRepo, searchResultChanged]);
 
   return (
     <div>
@@ -56,7 +72,7 @@ const DiabetesPage = () => {
   );
 }
 
-const HomePage = () => (
+const HomePage: React.FC = () => (
     <div className="App">
         <header className="App-header">
           <img src={logo} className="image-cropper" alt="logo" />
@@ -69,6 +85,7 @@ const HomePage = () => (
 
 
 const App: React.FC = () => {
+  
   return (
     <HashRouter basename='/'>
       <div>

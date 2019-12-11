@@ -66,7 +66,7 @@ const Meal = ({ meal }) => {
   return (
     <div className="mealCard">
      <p>Meal started at: {meal.time} <span className='measurement-tag'>{getMealTag(meal.time, meal.measurements, meal.noTag)}</span></p>
-     <p><img className="mealImg" src={process.env.PUBLIC_URL + '/meals/' + meal.image} alt={meal.image} /></p>
+     <p><img className="mealImg" src={meal.image} alt={meal.image} /></p>
      <p>Content: {meal.description}</p>
      <ul>
       {
