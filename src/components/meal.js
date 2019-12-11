@@ -1,5 +1,6 @@
 import React from 'react';
 import './meal.css'
+import placeholderImage from '../assets/loading.gif';
 
 const toDate = (dStr,format="h:m") => {
   var now = new Date();
@@ -66,7 +67,9 @@ const Meal = ({ meal }) => {
   return (
     <div className="mealCard">
      <p>Meal started at: {meal.time} <span className='measurement-tag'>{getMealTag(meal.time, meal.measurements, meal.noTag)}</span></p>
-     <p><img className="mealImg" src={meal.image} alt={meal.image} /></p>
+     <div class="image loading">
+       <img className="lazyload mealImg" src={placeholderImage} data-src={meal.image} alt={meal.image} />
+     </div>
      <p>Content: {meal.description}</p>
      <ul>
       {
