@@ -39,3 +39,20 @@ ul{
 .measurement-tag{
     font-weight: bold;
 }
+
+/* Lazy Loading */
+.lazyload {
+    opacity: 0;
+}
+
+.lazyloading{
+    opacity: 0.3;
+    transition: opacity 500ms;
+    -webkit-transition: opacity 500ms;
+}
+
+.lazyloaded {
+    opacity: 1;
+    -webkit-transition: opacity 500ms;
+    transition: opacity 500ms;
+}
