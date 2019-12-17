@@ -1,25 +1,40 @@
 import React from 'react';
 import './meal.css'
-import placeholderImage from '../assets/loading.gif';
+//import placeholderImage from '../assets/loading.gif';
 
-const toDate = (dStr,format="h:m") => {
+interface IMeasurement{
+  time: string;
+  value: number;
+}
+
+export interface IMeal{
+  time: string;
+  image: string;
+  noTag: number;
+  description: string;
+  measurements: Array<IMeasurement>;
+}
+
+const toDate = (dStr: string,format:string="h:m") => {
   var now = new Date();
 	if (format === "h:m") {
- 		now.setHours(dStr.substr(0,dStr.indexOf(":")));
- 		now.setMinutes(dStr.substr(dStr.indexOf(":")+1));
+    let delimiter = dStr.indexOf(":");
+    let cut = dStr.substr(0,delimiter);
+ 		now.setHours(+cut);
+ 		now.setMinutes(+(cut)+1);
      now.setSeconds(0);
  		return now;
 	}else 
 		return "Invalid Format";
 }
-const applyMeasurementClass = (measureTimeParam, measureValueParam) => {
+const applyMeasurementClass = (measureTimeParam: string, measureValueParam: number) => {
   let spanClass = 'measurement-ok'
   if(measureTimeParam === 'n/a'){
     spanClass = ''
   }
   else{
     let measureTime = toDate(measureTimeParam,"h:m");
-    let measureValue = measureValueParam;
+    let measureValue = +measureValueParam;
     if (measureTime < toDate('07:00','h:m') && measureValue > 90){
       spanClass = 'measurement-high';
     }
@@ -35,7 +50,7 @@ const breakfastCutoff = toDate('10:00','h:m');
 const dinnerCutoff = toDate('18:00','h:m');
 const supperCutoff = toDate('21:00','h:m');
 
-const getMealTag = (mealTime, measurements, noTag) => {
+const getMealTag = (mealTime: string, measurements: Array<IMeasurement>, noTag: number) => {
   let tag = '';
   if (measurements.length && !noTag){
     const when = toDate(mealTime,"h:m")
@@ -60,21 +75,18 @@ const getMealTag = (mealTime, measurements, noTag) => {
   return tag;
 }
 
-const Meal = ({ meal }) => {
-  // let a = toDate("16:10");
-  // let b = toDate("14:40");
-  // console.log((a.getTime() - b.getTime())/ (1000 * 3600));
+const Meal: React.SFC<IMeal> = (props) => {
   return (
     <div className="mealCard">
-     <p>Meal started at: {meal.time} <span className='measurement-tag'>{getMealTag(meal.time, meal.measurements, meal.noTag)}</span></p>
-     <div class="image loading">
-       <img className="lazyload mealImg" src={placeholderImage} data-src={meal.image} alt={meal.image} />
+     <p>Meal started at: {props.time} <span className='measurement-tag'>{getMealTag(props.time, props.measurements, props.noTag)}</span></p>
+     <div>
+       <img className="mealImg" src={props.image} alt={props.image} />
      </div>
-     <p>Content: {meal.description}</p>
+     <p>Content: {props.description}</p>
      <ul>
       {
-        !(meal.measurements.length) ? '' :
-          meal.measurements.map( (measure, i) => {
+        !(props.measurements.length) ? '' :
+          props.measurements.map( (measure: IMeasurement, i: number) => {
             let spanClass = applyMeasurementClass(measure.time, measure.value);
             return (
               <li key={i}>{measure.time}: <span className={spanClass}>{measure.value} mg/dL</span></li>

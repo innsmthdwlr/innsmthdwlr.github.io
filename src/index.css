@@ -1,8 +1,9 @@
 @font-face {
+  font-display: swap;
   font-family: 'AvenirNextLTPro';
   font-style: normal;
   font-weight: normal;
-  src: local('AvenirNextLTPro'), url('./components/AvenirNextLTPro-Regular.woff') format('woff');
+  src: local('AvenirNextLTPro'), url('./assets/AvenirNextLTPro-Regular.woff') format('woff');
 }
 
 body {
