@@ -1,6 +1,9 @@
 import React from 'react';
 import './meal.css'
-//import placeholderImage from '../assets/loading.gif';
+import placeholderImage from '../assets/loading.gif';
+import 'lazysizes/plugins/attrchange/ls.attrchange';
+import 'lazysizes/plugins/respimg/ls.respimg.js';
+import 'lazysizes';
 
 interface IMeasurement{
   time: string;
@@ -80,7 +83,7 @@ const Meal: React.SFC<IMeal> = (props) => {
     <div className="mealCard">
      <p>Meal started at: {props.time} <span className='measurement-tag'>{getMealTag(props.time, props.measurements, props.noTag)}</span></p>
      <div>
-       <img className="mealImg" src={props.image} alt={props.image} />
+       <img className="lazyload mealImg" src={placeholderImage} data-src={props.image} alt={props.image} />
      </div>
      <p>Content: {props.description}</p>
      <ul>

@@ -32,7 +32,7 @@ const Day: React.SFC<IDay> = (props) => {
                 {
                     props.meals.map( (meal:IMeal, i: number) => {
                         return (
-                            <Meal time={meal.time} image={meal.image} noTag={meal.noTag} description={meal.description} measurements={meal.measurements} />
+                            <Meal key={i} time={meal.time} image={meal.image} noTag={meal.noTag} description={meal.description} measurements={meal.measurements} />
                         );
                     })                
                 }
