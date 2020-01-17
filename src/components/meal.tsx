@@ -30,6 +30,7 @@ const toDate = (dStr: string,format:string="h:m") => {
 	}else 
 		return "Invalid Format";
 }
+
 const applyMeasurementClass = (measureTimeParam: string, measureValueParam: number) => {
   let spanClass = 'measurement-ok'
   if(measureTimeParam === 'n/a'){

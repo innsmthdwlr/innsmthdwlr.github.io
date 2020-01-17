@@ -1,0 +1,81 @@
+.whoami-container{
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.whoami-me{
+    background-color: #383c44;
+    order: 1;
+    color: silver;
+    border: 1px black dashed;
+    padding: 1em;
+    margin: 1em;
+}
+
+.whoami-funzies{
+    flex: 3 1 auto;
+    width: 200px;
+    order: 2;
+    background-color: #383c44;
+    color: silver;
+    border: 1px black dashed;
+    padding: 1em;
+    margin: 1em;
+}
+
+.whoami-letmedie{
+    flex: 1 1 0;
+    order: 3;
+    background-color: #383c44;
+    color: silver;
+    border: 1px black dashed;
+    padding: 1em;
+    margin: 1em;
+}
+
+.funzies-container {
+    margin: 1em 0 1em 0;  
+    border: 0;
+    overflow: auto;
+}
+.funzies-thumb {
+    float: left;
+    margin-right: 1em;
+    margin-bottom: 1em;
+}
+.funzies-thumb-right {
+    float: right;
+    margin-left: 1em;
+    margin-bottom: 1em;
+}
+.funzies-thumb img {
+    display: block;
+    height: 250px;
+    width: 206px;
+}
+.funzies-thumb-right img {
+    display: block;
+    height: 250px;
+    width: 206px;
+}
+.funzies-content {
+    margin-left: 0em;
+}
+.funzies-content {
+    margin-left: 0em;
+    text-align: right;
+}
+.funzies-title {
+    font-weight: bold;
+    font-size: 1em;
+    display: inline-block;
+}
+
+.flow-left {
+    float: left;
+    margin: 2em;
+}
+.flow-right {
+    float: right;
+    margin: 2em;
+}

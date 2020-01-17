@@ -60,19 +60,3 @@ const DiabetesPage: React.FC = () => {
   }
 
   export default DiabetesPage;
-
-
-//   export interface IDay
-// {
-//   "date": string; 
-//   "meals": { 
-//     "time": string; 
-//     "image": string; 
-//     "description": string; 
-//     "noTag": number;
-//     "measurements": { 
-//       "time": string; 
-//       "value": number; 
-//     }[]; 
-//   }[]; 
-// }

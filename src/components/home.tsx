@@ -4,7 +4,7 @@ import logo from '../assets/hypnotoad.gif';
 const HomePage: React.FC = () => {
     return (
       <div className="App">
-          <header className="App-header">
+          <header role="banner" className="App-header">
             <img src={logo} className="image-cropper" alt="logo" />
             <p>
               All hail the hypnotoad!
